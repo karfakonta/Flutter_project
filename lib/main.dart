@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:loginpage/home/home_screen.dart';
 
 
 void main() {
@@ -13,33 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Courses',
-      theme: ThemeData(
-        primaryColor: Colors.white70,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: const WelcomeScreen(),
+      home: const HomePage(),
     );
   }
 }
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Login Page in Flutter"),
-        ),
-        body: Column(
-          children: <Widget> [
-            Image.asset("images/hotel1.jpg", width: 300, height: 300,),
-            Image.asset("images/hotel2.jpg", width: 300, height: 300,)
-          ],
-        )
-    );
-  }
-}
-
 
