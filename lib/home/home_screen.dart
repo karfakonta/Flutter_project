@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ), 
        bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.video_call),
+            icon: Icon(Icons.video_collection),
             label: "Video",
             backgroundColor: Palette.bottomBarColor,
           ),
