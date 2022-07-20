@@ -11,6 +11,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int selectedIndex = 0;
   List<String> langues = [
     "Français",
     "Anglais",
@@ -20,6 +21,8 @@ class _HomeState extends State<Home> {
     "Socé",
     "Peulh",
     "Djola",
+    "Espagnol",
+    "Russe",
   ];
   Widget build(BuildContext context) {
     return Column(
@@ -31,6 +34,7 @@ class _HomeState extends State<Home> {
             "The New Humanitarian | High-profile terror trial speaks to an emerging threat in Senegal"),
         _title("Follow on :"),
         _langues(langues),
+        _title("Latests events :"),
       ],
     );
   }
@@ -66,7 +70,7 @@ class _HomeState extends State<Home> {
       child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -87,37 +91,42 @@ class _HomeState extends State<Home> {
   }
 
   Widget _langues(List<String> lang) {
-    return Expanded(
-      //height: 100,
-      child: Padding(
-        padding: EdgeInsets.only(top: 1.0),
-        child: ListView.builder(
-          padding: EdgeInsets.only(left: 10.0),
-          scrollDirection: Axis.horizontal,
-          itemCount: lang.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              child: Padding(
-                padding: EdgeInsets.all(2.0),
-                child: Column(
-                  children: <Widget>[
-                    
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    Text(
-                      lang[index],
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    )
-                  ],
-                ),
+    return Container(
+      height: 70,
+      child: ListView.builder(
+        padding: EdgeInsets.only(left: 10.0),
+        scrollDirection: Axis.horizontal,
+        itemCount: lang.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () => {
+              setState(
+                () => {selectedIndex = index},
               ),
-            );
-          },
-        ),
+            },
+            child: Padding(
+              padding: EdgeInsets.all(2.0),
+              child: Column(
+                children: <Widget>[
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: selectedIndex == index ?  Colors.red : Colors.white,
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      side: BorderSide(width: 1, color: Colors.grey),
+                    ),
+                    onPressed: null,
+                    child: Text(
+                      lang[index],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
