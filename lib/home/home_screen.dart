@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   int _selectedIndex = 0;
+  int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(
@@ -35,7 +35,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home", style: TextStyle(color: Colors.black),),
+        title: const Text(
+          "Home",
+          style: TextStyle(color: Colors.black),
+        ),
         backgroundColor: Palette.appBarColor,
         centerTitle: true,
         leading: IconButton(
@@ -43,13 +46,13 @@ class _HomePageState extends State<HomePage> {
             Icons.menu,
             size: 30,
             color: Colors.red,
-          ), onPressed: () {
+          ),
+          onPressed: () {
             Video();
-        },
+          },
         ),
         actions: <Widget>[
-          Image.asset("/Users/karfakonta/AndroidStudioProjects/Flutter/loginpage/images/iconlogo.png",)
-          /*IconButton(
+          IconButton(
             onPressed: () {
               setState(
                 () {
@@ -60,45 +63,54 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(
               Icons.account_circle,
               size: 30,
-              color: Colors.black,
+              color: Colors.red,
             ),
-          ),*/
+          ),
         ],
       ),
-
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-
-       bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.red,),
+            icon: Icon(
+              Icons.home,
+              color: Colors.red,
+            ),
             label: "Home",
-            backgroundColor: Colors.white
-            //Palette.bottomBarColor,
+            backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.video_collection, color: Colors.red,),
+            icon: Icon(
+              Icons.video_collection,
+              color: Colors.red,
+            ),
             label: "Video",
-            //backgroundColor: Palette.bottomBarColor,
+            backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
+            icon: Icon(
+              Icons.calendar_month,
+              color: Colors.red,
+            ),
             label: "Calendrier",
             backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu, color: Colors.red),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.red,
+            ),
             label: "Menu",
-           //backgroundColor: Palette.bottomBarColor,
+            backgroundColor: Palette.bottomBarColor,
           ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
         onTap: _onItemTapped,
-      ), 
+      ),
     );
   }
 }
