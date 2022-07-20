@@ -85,9 +85,9 @@ class _HomePageState extends State<HomePage> {
             //backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month, color: Colors.red),
-            label: "calendrier",
-            //backgroundColor: Palette.bottomBarColor,
+            icon: Icon(Icons.calendar_month),
+            label: "Calendrier",
+            backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu, color: Colors.red),

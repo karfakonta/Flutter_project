@@ -7,12 +7,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-   @override
-  Widget build(BuildContext context) {
-      return Scaffold(
-        body: Image.asset("/Users/karfakonta/AndroidStudioProjects/Flutter/loginpage/images/image1.png"),
-
-        );
+   Widget build(BuildContext context) {
+      return Column(
+        children: <Widget>[],
+      );
    }
 }
