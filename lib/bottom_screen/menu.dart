@@ -8,7 +8,8 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
 
-   Widget build(BuildContext context) {
-      return Text("menu");
+   @override
+  Widget build(BuildContext context) {
+      return const Text("menu");
    }
 }

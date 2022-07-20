@@ -35,18 +35,21 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("Home", style: TextStyle(color: Colors.black),),
         backgroundColor: Palette.appBarColor,
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(
             Icons.menu,
             size: 30,
-            color: Colors.black,
-          ), onPressed: () {  },
+            color: Colors.red,
+          ), onPressed: () {
+            Video();
+        },
         ),
         actions: <Widget>[
-          IconButton(
+          Image.asset("/Users/karfakonta/AndroidStudioProjects/Flutter/loginpage/images/iconlogo.png",)
+          /*IconButton(
             onPressed: () {
               setState(
                 () {
@@ -59,35 +62,37 @@ class _HomePageState extends State<HomePage> {
               size: 30,
               color: Colors.black,
             ),
-          ),
+          ),*/
         ],
       ),
 
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
-      ), 
+      ),
+
        bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, color: Colors.red,),
             label: "Home",
-            backgroundColor: Palette.bottomBarColor,
+            backgroundColor: Colors.white
+            //Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.video_collection),
+            icon: Icon(Icons.video_collection, color: Colors.red,),
             label: "Video",
-            backgroundColor: Palette.bottomBarColor,
+            //backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
+            icon: Icon(Icons.calendar_month, color: Colors.red),
             label: "calendrier",
-            backgroundColor: Palette.bottomBarColor,
+            //backgroundColor: Palette.bottomBarColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
+            icon: Icon(Icons.menu, color: Colors.red),
             label: "Menu",
-           backgroundColor: Palette.bottomBarColor,
+           //backgroundColor: Palette.bottomBarColor,
           ),
         ],
         currentIndex: _selectedIndex,
