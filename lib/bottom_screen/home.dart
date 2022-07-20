@@ -11,7 +11,7 @@ class _HomeState extends State<Home> {
    @override
   Widget build(BuildContext context) {
       return Scaffold(
-        body: Image.asset("/Users/karfakonta/AndroidStudioProjects/Flutter/loginpage/images/image1.png"),
+        body: Image.asset(""),
 
         );
    }

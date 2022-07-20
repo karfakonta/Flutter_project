@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
         },
         ),
         actions: <Widget>[
-          Image.asset("/Users/karfakonta/AndroidStudioProjects/Flutter/loginpage/images/iconlogo.png",)
+          Image.asset("",)
           /*IconButton(
             onPressed: () {
               setState(
