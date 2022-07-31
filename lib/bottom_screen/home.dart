@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-import '../config/palette.dart';
+import 'package:loginpage/config/palette.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -91,7 +90,7 @@ class _HomeState extends State<Home> {
   }
 
   Widget _langues(List<String> lang) {
-    return Container(
+    return SizedBox(
       height: 70,
       child: ListView.builder(
         padding: EdgeInsets.only(left: 10.0),
@@ -120,6 +119,7 @@ class _HomeState extends State<Home> {
                     onPressed: null,
                     child: Text(
                       lang[index],
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   )
                 ],

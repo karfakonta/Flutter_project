@@ -6,6 +6,7 @@ import 'package:loginpage/bottom_screen/home.dart';
 import 'package:loginpage/bottom_screen/menu.dart';
 import 'package:loginpage/bottom_screen/video.dart';
 import 'package:loginpage/config/palette.dart';
+import 'package:loginpage/home/showPopupMenu.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> {
     Video(),
     Calendrier(),
     Menu(),
+    ShowPopupMenu(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,9 +49,7 @@ class _HomePageState extends State<HomePage> {
             size: 30,
             color: Colors.red,
           ),
-          onPressed: () {
-            Video();
-          },
+          onPressed: () {},
         ),
         actions: <Widget>[
           IconButton(
@@ -68,6 +68,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
