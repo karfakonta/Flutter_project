@@ -24,18 +24,38 @@ class _HomeState extends State<Home> {
     "Espagnol",
     "Russe",
   ];
+
+  List<String> nameVideo = [
+    "assets/image1.png",
+    "assets/image1.png",
+    "assets/image1.png",
+  ];
+
+  List<String> description = [
+    "sidi va à l'école",
+    "sidi va à l'école",
+    "sidi va à l'école",
+  ];
+
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const SizedBox(
-          height: 10,
+    return Scaffold(
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(
+                height: 10,
+              ),
+              _containerVideoYoutube("assets/image1.png",
+                  "The New Humanitarian | High-profile terror trial speaks to an emerging threat in Senegal"),
+              _title("Follow on :"),
+              _langues(langues),
+              _title("Latests events :"),
+              _videos(nameVideo, description)
+            ],
+          ),
         ),
-        _containerVideoYoutube("assets/image1.png",
-            "The New Humanitarian | High-profile terror trial speaks to an emerging threat in Senegal"),
-        _title("Follow on :"),
-        _langues(langues),
-        _title("Latests events :"),
-      ],
+      ),
     );
   }
 
@@ -110,7 +130,8 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   TextButton(
                     style: TextButton.styleFrom(
-                      backgroundColor: selectedIndex == index ?  Colors.red : Colors.white,
+                      backgroundColor:
+                          selectedIndex == index ? Colors.red : Colors.white,
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -132,7 +153,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-    Widget _videos(List <String> nameVideo, List <String> description) {
+  Widget _videos(List<String> nameVideo, List<String> description) {
     return SizedBox(
       height: 200,
       child: ListView.builder(
@@ -158,19 +179,24 @@ class _HomeState extends State<Home> {
                       },
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width - 40,
-                        height: 300,
+                        height: 200,
                         child: Column(
                           children: <Widget>[
                             Image.asset(nameVideo[index]),
-                            Container(
-                              child: Text(
-                                description[index],
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20
-                                ),
+                            Expanded(
+                              child: ButtonBar(
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  Text(
+                                    description[index],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 0,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
