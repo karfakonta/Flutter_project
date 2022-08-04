@@ -11,6 +11,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int selectedIndex = 0;
+  int videoIndex = 0;
   List<String> langues = [
     "Français",
     "Anglais",
@@ -122,6 +123,59 @@ class _HomeState extends State<Home> {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   )
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+    Widget _videos(List <String> nameVideo, List <String> description) {
+    return SizedBox(
+      height: 200,
+      child: ListView.builder(
+        padding: EdgeInsets.only(left: 10.0),
+        scrollDirection: Axis.horizontal,
+        itemCount: nameVideo.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () => {
+              setState(
+                () => {videoIndex = index},
+              ),
+            },
+            child: Padding(
+              padding: EdgeInsets.all(2.0),
+              child: Column(
+                children: <Widget>[
+                  Card(
+                    child: InkWell(
+                      splashColor: Colors.red.withAlpha(30),
+                      onTap: () => {
+                        print("card taped"),
+                      },
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width - 40,
+                        height: 300,
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(nameVideo[index]),
+                            Container(
+                              child: Text(
+                                description[index],
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
